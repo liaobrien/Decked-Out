@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
-// const { Post, User, Comment } = require('../models');
+// const { Post, User, Comment } = require('../models'); //tbd when we get models set up
 const router = require('express').Router();
-//the get request for the main page.
+//the get request for the main page
 router.get('/', async (req, res) => {
 	try{
-   	 res.render('homepage')
+   	 res.render('homepage') //renders the homepage for now, no fancy sql calls yet
 	}
 
 	catch(err) {

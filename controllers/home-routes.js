@@ -1,10 +1,25 @@
 const sequelize = require('../config/connection');
-// const { Post, User, Comment } = require('../models'); //tbd when we get models set up
+const { Deck, User, Card } = require('../models'); //tbd when we get models set up
 const router = require('express').Router();
 //the get request for the main page
 router.get('/', async (req, res) => {
 	try{
-   	 res.render('homepage') //renders the homepage for now, no fancy sql calls yet
+		const deckQuery = await Deck.findAll({
+				attributes:[
+					'id',
+					'name',
+					'user_id'
+				],
+				include: [{
+					model: Card,
+					attributes: ['id', 'question', 'answer', 'deck_id']
+				}]
+			})
+		
+			const decks = deckQuery.map((displayDecks) => 
+				displayDecks.get({plain:true})
+			)
+   	 res.render('homepage', {decks}) //renders the homepage for now
 	}
 
 	catch(err) {

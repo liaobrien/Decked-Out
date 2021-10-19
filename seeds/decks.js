@@ -20,6 +20,6 @@ const deckData = [{
     },
 ];
 
-const seedUsers = () => User.bulkCreate(cardData);
+const seedUsers = () => Deck.bulkCreate(deckData);
 
 module.exports = seedUsers;

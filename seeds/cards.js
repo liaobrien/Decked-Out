@@ -30,6 +30,6 @@ const cardData = [{
     },
 ];
 
-const seedUsers = () => User.bulkCreate(cardData);
+const seedUsers = () => Card.bulkCreate(cardData);
 
 module.exports = seedUsers;

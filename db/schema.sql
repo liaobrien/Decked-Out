@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS not_quizlet;
+
+CREATE DATABASE not_quizlet;

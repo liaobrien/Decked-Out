@@ -13,7 +13,10 @@
   <div class="wrapper">
       <header class="hero">
           <div>
-            <nav class="nav">
+          <h1 class="app-title"><i class="fab "></i>DeckedOut study system</h1>
+          <div class="bg-img">
+           <div class="container">
+            <nav class="topnav">
                     <a class="link" href="/">Home</a>
                     {{#if loggedIn}}
                     <a class="link" href="/new-deck">Create a new Deck</a>
@@ -21,10 +24,11 @@
                     {{else}}
                     <a class="link" href="/login" id="login">Login</a>
                     {{/if}}
-                </nav>          
+                </nav>
+           </div>
+          </div>    
           </div>
 
-          <h1 class="app-title"><i class="fab "></i>DeckedOut study system</h1>
       </header>
 
     <main>
@@ -32,9 +36,10 @@
     </main>
   </div>
 
+    <script src="/javascript/next.js"></script>
     
     {{#if loggedIn}}
-    <script src="/javascript/logout.js"></>
+    <script src="/javascript/logout.js"></script>
     {{/if}}
 
 

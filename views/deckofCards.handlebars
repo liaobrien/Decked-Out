@@ -1,4 +1,13 @@
+<header>Deck Name:</header>
+{{#each this}}
+{{name}}
+{{/each}}
+
+<br>
+<br>
+<header>Your Questions:</header>
 <article>
+
 {{#each deckCards as |deckCard|}}
 {{> deck-cards}}
 {{/each}}

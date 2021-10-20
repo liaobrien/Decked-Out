@@ -1,4 +1,8 @@
-<article>
+<article class="post"> 
+
+{{#each posts as |post| }}
+        {{> post-info post}}
+    {{/each}}
 
  <div>Can you see this?</div>
 

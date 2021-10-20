@@ -1,47 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chase's Tech Blog</title>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-<!-- particles container-->
-<div id="particles-js"></div>
-  <div class="wrapper">
-      <header class="hero">
-          <div>
-            <nav class="nav">
-                    <a class="link" href="/">Home</a>
-                    <a class="link" href="/dashboard">Dashboard</a>
-                    {{#if loggedIn}}
-                    <a class="link" href="/" id="logout">Logout</a>
-                    {{else}}
-                    <a class="link" href="/login">Login</a>
-                    {{/if}}
-                </nav>          
-          </div>
-
-          <h1 class="app-title"><i class="fab "></i>The Tech Blog</h1>
-      </header>
-
-    <main>
-      {{{ body }}}
-    </main>
-  </div>
-
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></>
-    {{/if}}
-
-
-</body>
-
-<script >particlesJS("particles-js", {
+particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 6,
@@ -51,7 +8,7 @@
         }
       },
       "color": {
-        "value": "#21b548"
+        "value": "#000"
       },
       "shape": {
         "type": "circle",
@@ -79,7 +36,7 @@
         }
       },
       "size": {
-        "value": 100,
+        "value": 250,
         "random": true,
         "anim": {
           "enable": false,
@@ -171,5 +128,4 @@
     }
     requestAnimationFrame(update);
   };
-  requestAnimationFrame(update);</script>
-</html>
+  requestAnimationFrame(update);

@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 		const decks = deckQuery.map((displayDecks) =>
 			displayDecks.get({ plain: true })
 		)
-		res.render('homepage', { decks }) //renders the homepage for now
+		res.render('homepage', { decks, loggedIn: req.session.loggedIn }) //renders the homepage for now
 	}
 
 	catch (err) {
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 // login route
 router.get('/login', (req, res) => {
 	// If the user is already logged in, redirect to the homepage
-	// if (!req.session.loggedIn) {
+	// if (req.session.loggedIn) {
 	// 	res.redirect('/');
 	// 	return;
 	// }

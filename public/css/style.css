@@ -1,0 +1,24 @@
+nav{
+    position:relative;
+    display:flex;
+    justify-content:space-around;
+    font-size:25px;
+}
+main{
+    position:relative;
+    display:flex;
+    justify-content:space-around;
+    font-size:25px;
+}
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #667369;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+

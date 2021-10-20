@@ -40,4 +40,77 @@ router.get('/login', (req, res) => {
 	res.render('login');
 });
 
+
+router.get('/deck/:id', async (req, res) => { //Shows the contents of each deck by ID
+	try{
+		const deckbyID = await Deck.findOne({
+			where:{
+					id: req.params.id
+			},
+			attributes:[
+					'id',
+					'name',
+					'user_id'
+				],
+			include: [{
+					model: Card,
+					attributes: ['id', 'question', 'answer', 'deck_id']
+				}]
+			})
+
+			const singleDeck = await deckbyID
+            if (!singleDeck) {
+                res.status(404).json({ message: 'No deck found with this id' });
+                return;
+            }
+
+            const deckCards = singleDeck.get({ plain: true });
+            console.log(deckCards);
+            res.render('deckofCards', { deckCards }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
+
+
+        }
+        catch(err) {
+            console.log(err);
+            res.status(500).json(err);
+        };
+});
+
+
+router.get('/card/:id', async (req, res) => { //Shows the answer of the associated card id
+	try{
+		const cardbyID = await Card.findOne({
+			where:{
+					id: req.params.id
+			},
+			attributes:[
+					'id',
+					'question',
+					'answer',
+					'deck_id'
+				],
+			include: [{
+					model: Deck,
+					attributes: ['id', 'name']
+				}]
+			})
+
+			const singleCard = await cardbyID
+            if (!singleCard) {
+                res.status(404).json({ message: 'No deck found with this id' });
+                return;
+            }
+
+            const cardAnswer = singleCard.get({ plain: true });
+            console.log(cardAnswer);
+            res.render('cardAnswer', { cardAnswer }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
+
+
+        }
+        catch(err) {
+            console.log(err);
+            res.status(500).json(err);
+        };
+});
+
 module.exports = router;

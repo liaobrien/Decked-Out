@@ -1,4 +1,7 @@
 const router = require('express').Router();
-//tbd
+
+const userRoutes = require('./user-routes');
+
+router.use('/users', userRoutes);
 
 module.exports = router;

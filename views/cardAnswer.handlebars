@@ -1,14 +1,16 @@
-<header>Question:</header>
-{{#each this}}
-{{question}}
-{{/each}}
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        {{#each this}}
+      <p> {{question}}</p>
+    {{/each}}
+    </div>
 
-<br>
-<br>
-<header>Your Answer:</header>
-{{#each this}}
-{{answer}}
-{{/each}}
-<article>
+    <div class="flip-card-back">
+      <h1>Your Answer:</h1> 
+    {{#each this}}
+      <p>{{answer}}</p> 
+      {{/each}}
+    </div>
+  </div>
 
-</article>

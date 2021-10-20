@@ -1,7 +1,11 @@
 <section class="card"> 
+    {{#each .}}
   <!-- This is an ahref that will display the deck name as a link, it will then lead to deck/:id TBD on those pages -->
-  <a href="/deck/{{id}}">
+  <a href="/card/{{id}}">
     <!-- The card contains the deck name as the card header -->
-    <header>{{name}}</header>
+<ul>
+   <li> {{question}}</li>
+</ul>
+   {{/each}}
   </a>
 </section>

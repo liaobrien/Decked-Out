@@ -113,4 +113,9 @@ router.get('/card/:id', async (req, res) => { //Shows the answer of the associat
         };
 });
 
+router.get('/new-deck', (req, res) => {
+    res.render('new-deck', {loggedIn: true}); //keeps you logged in
+});
+
+
 module.exports = router;

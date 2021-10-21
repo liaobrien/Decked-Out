@@ -1,0 +1,15 @@
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+        {{#each this}}
+      <p> {{question}}</p>
+    {{/each}}
+    </div>
+
+    <div class="flip-card-back">
+      <h1>Your Answer:</h1> 
+    {{#each this}}
+      <p>{{answer}}</p> 
+      {{/each}}
+    </div>
+  </div>

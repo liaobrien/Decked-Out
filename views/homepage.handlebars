@@ -1,11 +1,9 @@
-<article class="post"> 
 
-{{#each posts as |post| }}
-        {{> post-info post}}
-    {{/each}}
-
- <div>Can you see this?</div>
+<article>
+    <p>What Category would you like to study?</p>
+{{#each decks as |deck|}}
+{{> deck-details}}
+{{/each}}
 
 </article>
-
 

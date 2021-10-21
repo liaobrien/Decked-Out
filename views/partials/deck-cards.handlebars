@@ -1,0 +1,12 @@
+<section class="card"> 
+    {{!-- generates a list of the questions in a deck, unsure if I wanna do hrefs yet. --}}
+    {{#each .}} 
+
+<ul>
+  <a href="/card/{{id}}">  {{!-- Directs you to each individual card page. --}}
+   <li> {{question}}</li>
+   </a>
+</ul>
+
+   {{/each}}
+</section>

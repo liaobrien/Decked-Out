@@ -22,7 +22,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace(`/deck/${deckID}`);
     } else {
         console.log(cardQuestion)
         console.log(cardAnswer)

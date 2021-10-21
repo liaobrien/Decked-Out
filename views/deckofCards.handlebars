@@ -7,11 +7,12 @@
 <br>
 <header>Your Questions:</header>
 <article>
-<button type="button" class="start">Start your quiz</button>
+<button id="deckQuestions" type="button" class="start" value={{deckCards.user_id}} deck={{deckCards.cards.[0].id}}>Start your quiz</button>
 
-{{#each deckCards as |deckCard|}}
+{{!-- {{#each deckCards as |deckCard|}}
 {{> deck-cards}}
-{{/each}}
+{{/each}} --}}
+
 
 {{> new-cards}}
 

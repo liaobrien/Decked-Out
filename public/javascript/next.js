@@ -25,9 +25,10 @@ backButton.addEventListener('click', function(event){
     event.preventDefault();
 
     let currentQuestionID = document.querySelector('#question-card').getAttribute("value");
+    let previousQuestionID = document.querySelector('#question-card').getAttribute("deck");
 
     
-    if(`${currentQuestionID}` == `${previousQuestionID}` && `${currentQuestionID}` > 1){
+    if(`${currentQuestionID}` == `${previousQuestionID}`){
 
         currentQuestionID--;
         

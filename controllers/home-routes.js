@@ -77,11 +77,11 @@ router.get('/deck/:id', async (req, res) => { //Shows the contents of each deck 
 });
 
 
-router.get('/card/:id', async (req, res) => { //Shows the answer of the associated card id
+router.get('/deck/:deck_id/card/:card_id', async (req, res) => { //Shows the answer of the associated card id
 	try{
 		const cardbyID = await Card.findOne({
 			where:{
-					id: req.params.id
+					id: req.params.card_id
 			},
 			attributes:[
 					'id',

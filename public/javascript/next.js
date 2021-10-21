@@ -17,7 +17,7 @@ nextButton.addEventListener('click', function(event){
     }else{
         document.getElementById(".next").disabled = true;
     }
-    console.log(currentQuestionID);
+    
 
 })
 
@@ -27,7 +27,7 @@ backButton.addEventListener('click', function(event){
     let currentQuestionID = document.querySelector('#question-card').getAttribute("value");
 
     
-    if(`${currentQuestionID}` > 1){
+    if(`${currentQuestionID}` == `${previousQuestionID}` && `${currentQuestionID}` > 1){
 
         currentQuestionID--;
         
@@ -35,5 +35,5 @@ backButton.addEventListener('click', function(event){
     }else{
         document.getElementById(".back").disabled = true;
     }
-    console.log(currentQuestionID);
+    
 })

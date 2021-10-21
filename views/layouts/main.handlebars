@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chase's Tech Blog</title>
+  <title>DeckedOut</title>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -13,13 +13,14 @@
   <div class="wrapper">
       <header class="hero">
           <div>
-          <h1 class="app-title"><i class="fab "></i>DeckedOut study system</h1>
+          <h1 class="app-title"><i class="fab "></i>DeckedOut Study System</h1>
           <div class="bg-img">
            <div class="container">
             <nav class="topnav">
                     <a class="link" href="/">Home</a>
                     {{#if loggedIn}}
                     <a class="link" href="/new-deck">Create a new Deck</a>
+                    <a class="link" href="/my-decks">My Decks</a>
                     <button class="link" id="logout">Logout</button>
                     {{else}}
                     <a class="link" href="/login" id="login">Login</a>

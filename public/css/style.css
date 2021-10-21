@@ -2,6 +2,10 @@
   font-family: "Martel", serif;
 }
 
+body {
+  background-color: #cacaca;
+}
+
 h1 {
   font-family: "Nunito", "sans-serif";
   font-weight: bold;
@@ -71,8 +75,14 @@ main {
 
 .deck {
   text-align: center;
-  padding-top: 25%;
+  padding-top: 20%;
   height: 280px;
+  margin: 10px;
+  box-shadow: 7px 7px grey;
+}
+
+.deck-title {
+  color: black;
 }
 
 .flip-card {

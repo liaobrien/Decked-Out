@@ -57,7 +57,7 @@ router.get('/deck/:id', async (req, res) => { //Shows the contents of each deck 
 					attributes: ['id', 'question', 'answer', 'deck_id']
 				}]
 			})
-
+				console.log(req.params['id'])
 			const singleDeck = await deckbyID
             if (!singleDeck) {
                 res.status(404).json({ message: 'No deck found with this id' });
@@ -66,7 +66,7 @@ router.get('/deck/:id', async (req, res) => { //Shows the contents of each deck 
 
             const deckCards = singleDeck.get({ plain: true });
             console.log(deckCards);
-            res.render('deckofCards', { deckCards }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
+            res.render('deckofCards', { deckCards, loggedIn: true }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
 
 
         }
@@ -103,7 +103,7 @@ router.get('/deck/:deck_id/card/:card_id', async (req, res) => { //Shows the ans
 
             const cardAnswer = singleCard.get({ plain: true });
             console.log(cardAnswer);
-            res.render('cardAnswer', { cardAnswer }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
+            res.render('cardAnswer', { cardAnswer, loggedIn: true }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
 
 
         }
@@ -112,5 +112,14 @@ router.get('/deck/:deck_id/card/:card_id', async (req, res) => { //Shows the ans
             res.status(500).json(err);
         };
 });
+
+router.get('/new-deck', (req, res) => {
+    res.render('new-deck', {loggedIn: true}); //keeps you logged in
+});
+
+router.get('/deck/:id/new-card', (req, res) => {
+    res.render('new-card', {loggedIn: true}); //keeps you logged in
+});
+
 
 module.exports = router;

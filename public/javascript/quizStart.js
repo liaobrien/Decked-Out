@@ -1,16 +1,13 @@
-let startButton = document.querySelector('.start');
 
-startButton.addEventListener('click', function(event){
-    event.preventDefault();
-    
-    let startQuestions = document.querySelector('#deckQuestions').getAttribute("value");
-    let questionDeck = document.querySelector('#deckQuestions').getAttribute("deck");
-
-console.log(startQuestions);
-console.log(questionDeck);
-
-
-location.replace(`/deck/${startQuestions}/card/${questionDeck}`);  
+    function myFunction() {
+        let hideShow = document.querySelector(".hideMe");
+        if (hideShow.style.display === "block") {
+            hideShow.style.display = "none";          
+        } else {
+            hideShow.style.display = "block";
+        }
+    }
 
     
-})
+
+

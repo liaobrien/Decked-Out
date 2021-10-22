@@ -16,13 +16,27 @@ const cardData = [{
     },
     {
         id: 3,
+        question: 'E/Z?',
+        answer: 'entgegen = opposite and zusammen = together',
+        deck_id: 1
+
+    },
+    {
+        id: 4,
+        question: 'stand for what?',
+        answer: 'entgegen = opposite and zusammen = together',
+        deck_id: 1
+
+    },
+    {
+        id: 5,
         question: 'Where are macrophages found?',
         answer: 'In almost all tissue',
         deck_id: 2
 
     },
     {
-        id: 4,
+        id: 6,
         question: 'When did the Civil War begin?',
         answer: '1861',
         deck_id: 3

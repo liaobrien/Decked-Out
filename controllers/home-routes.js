@@ -58,6 +58,7 @@ router.get('/deck/:id', async (req, res) => { //Shows the contents of each deck 
 				}]
 			})
 				console.log(req.params['id'])
+				
 			const singleDeck = await deckbyID
             if (!singleDeck) {
                 res.status(404).json({ message: 'No deck found with this id' });
@@ -88,13 +89,13 @@ router.get('/deck/:deck_id/card/:card_id', async (req, res) => { //Shows the ans
 					'question',
 					'answer',
 					'deck_id'
-				],
+			],
 			include: [{
 					model: Deck,
 					attributes: ['id', 'name']
 				}]
 			})
-
+			
 			const singleCard = await cardbyID
             if (!singleCard) {
                 res.status(404).json({ message: 'No deck found with this id' });

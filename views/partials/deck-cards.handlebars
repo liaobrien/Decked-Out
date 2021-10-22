@@ -1,12 +1,25 @@
-<section class="card"> 
-    {{!-- generates a list of the questions in a deck, unsure if I wanna do hrefs yet. --}}
-    {{#each .}} 
+<div class="flip-card hideMe" >
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      
+      <p id="question-card" deck={{this.id}}> {{this.question}}</p>
+   
+    </div>
 
-<ul>
-  <a href="/card/{{id}}">  {{!-- Directs you to each individual card page. --}}
-   <li> {{question}}</li>
-   </a>
-</ul>
+    <div class="flip-card-back">
+      <h1>Your Answer:</h1> 
+    {{!-- {{#each this}} --}}
+      <p>{{this.answer}}</p> 
+      {{!-- {{/each}} --}}
+ 
+    </div>
+  </div>
+   <button type="button" class="back">Back</button>
 
-   {{/each}}
-</section>
+  <button type="button" class="next">Next</button>
+
+  </div>
+
+
+
+  

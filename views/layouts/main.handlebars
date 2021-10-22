@@ -19,17 +19,18 @@
   <div class="wrapper">
       <header class="hero">
           <div>
-          <h1 class="app-title"><i class="fab "></i>DeckedOut Study System</h1>
+          
           <div class="bg-img">
+            <h1 class="app-title text-light">DeckedOut Study System</h1>
            <div class="container">
             <nav class="nav topnav justify-content-center">
-                    <a class="link" href="/">Home</a>
+                    <a class="link btn" href="/">Home</a>
                     {{#if loggedIn}}
-                    <a class="link" href="/new-deck">Create a new Deck</a>
-                    <a class="link" href="/my-decks">My Decks</a>
-                    <button class="link" id="logout">Logout</button>
+                    <a class="link btn" href="/new-deck">Create a new Deck</a>
+                    <a class="link btn" href="/my-decks">My Decks</a>
+                    <button class="link btn" id="logout">Logout</button>
                     {{else}}
-                    <a class="link" href="/login" id="login">Login</a>
+                    <a class="link btn" href="/login" id="login">Login</a>
                     {{/if}}
                 </nav>
            </div>

@@ -1,4 +1,4 @@
-<div class="flip-card hideMe" >
+<div class="flip-card hideMe" id="card-{{this.id}}">
   <div class="flip-card-inner">
     <div class="flip-card-front">
       
@@ -8,17 +8,20 @@
 
     <div class="flip-card-back">
       <h1>Your Answer:</h1> 
-    {{!-- {{#each this}} --}}
+    
       <p>{{this.answer}}</p> 
-      {{!-- {{/each}} --}}
+      
  
     </div>
   </div>
-   <button type="button" class="back">Back</button>
+   <button type="button" data-id={{this.id}} class="back">Back</button>
 
-  <button type="button" class="next">Next</button>
+  <button type="button" id="button-{{this.id}}" data-id={{this.id}} class="next">Next</button>
 
   </div>
+
+  <script src="/javascript/next.js"></script>
+  <script src="/javascript/back.js"></script>
 
 
 

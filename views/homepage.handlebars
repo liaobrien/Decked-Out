@@ -1,5 +1,5 @@
 
-<article>
+<article class="text-center">
 
 {{#if loggedIn}}
     <p class="text-center my-2">Recent users decks:</p>
@@ -7,8 +7,8 @@
 {{> deck-details}}
 {{/each}}
 {{else}}
-<p>Login to see your decks, other users decks or create new ones!</p>
-<a class="link" href="/login" id="login">Login or Signup</a>
+<p class="my-4">Log in to see and create your own study decks, as well as view other users' decks!</p>
+<a class="link btn btn-dark" href="/login" id="login">Login or Signup</a>
 {{/if}}
 </article>
 

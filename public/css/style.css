@@ -11,6 +11,15 @@ h1 {
   font-weight: bold;
 }
 
+#logout {
+  color: white;
+}
+
+#logout:hover {
+  background-color: var(--bs-gray-200);
+  color: black;
+}
+
 main {
   position: relative;
   display: flex;
@@ -50,6 +59,7 @@ main {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  border-radius: 10px;
 }
 
 /* Navbar links */

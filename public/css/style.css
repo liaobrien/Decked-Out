@@ -8,6 +8,7 @@ body {
 
 h1 {
   font-family: "Nunito", "sans-serif";
+  font-size: 330%;
   font-weight: bold;
 }
 
@@ -30,12 +31,13 @@ main {
   position: relative;
   display: flex;
   justify-content: center;
+  line-height: 125px;
 }
 .bg-img {
   /* The image used */
-  background-image: url("https://mblexguide.com/wp-content/uploads/2018/10/color-flash-cards-e1539160537573.jpg.webp");
-
-  min-height: 200px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(https://i.pinimg.com/originals/d0/ab/52/d0ab52858ed373aea03d500ad43e9958.jpg);
+  min-height: 250px;
 
   /* Center and scale the image nicely */
   background-position: center;

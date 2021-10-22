@@ -14,7 +14,32 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
-  
+
+
+  router.put('/:id',  async (req, res) => {
+    try{
+    const updateDeck = await Deck.update({
+            name: req.body.deckName,
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+
+        const updatedDeck = await updateDeck
+            if (!updatedDeck) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(updatedDeck)}
+
+        catch(err) {
+            console.log(err);
+            res.status(500).json(err);
+          };
+        });
+
+
   router.delete('/:id', async (req, res) => {
   try{
     const deleteDeck = await Deck.destroy({
@@ -36,4 +61,4 @@ router.post('/', async (req, res) => {
 });
 
 
-  module.exports = router;
+module.exports = router;

@@ -15,4 +15,25 @@ router.post('/', async (req, res) => {
     }
   });
   
+  router.delete('/:id', async (req, res) => {
+  try{
+    const deleteDeck = await Deck.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+      const destroyedDeck = await deleteDeck
+        if (!destroyedDeck) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(destroyedDeck);}
+
+    catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    };
+});
+
+
   module.exports = router;

@@ -81,17 +81,24 @@ main {
 .card {
   position: relative;
   display: flex;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
 
 .deck {
   text-align: center;
   padding-top: 20%;
-  height: 280px;
-  width: 400px;
+  /* height: 280px;
+  width: 400px; */
   margin: 10px;
   box-shadow: 7px 7px grey;
+}
+
+.my-deck {
+  width: 100%;
+  height: 100%;
+  height: 280px;
+  width: 400px;
 }
 
 .deck-title {
@@ -142,7 +149,7 @@ main {
 #particles-js {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 800px;
   background-color: #667369;
   background-image: url("");
   background-repeat: no-repeat;

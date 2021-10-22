@@ -1,40 +1,43 @@
-let nextButton = document.querySelector('.next');
-let backButton = document.querySelector('.back');
-
-nextButton.addEventListener('click', function(event){
-    event.preventDefault();
-
-    let currentQuestionID = document.querySelector('#question-card').getAttribute("value");
-    let previousQuestionID = document.querySelector('#question-card').getAttribute("deck");
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    let nextButton = document.querySelectorAll('.next');
+    
+    
+for (let i = 0; i < nextButton.length; i++) {
+    nextButton[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        let id=this.getAttribute('data-id');
+      let flipcardEl=document.getElementById("card-" +id);  
+        flipcardEl.classList.add("hideMe");
+       let  nextId=parseInt(id) + 1;
+        let flipcardNextEl= document.getElementById("card-"+nextId); 
+        flipcardNextEl.classList.remove("hideMe");
+        // let  beforeId=parseInt(id);
+        // console.log("beforeId", beforeId);
+        // let flipcardBeforeEl=document.getElementById("card-" +beforeId);  
+        // flipcardBeforeEl.classList.add("hideMe");
+    })
+    
+}
+});
 
     
-    if(`${currentQuestionID}` == `${previousQuestionID}`){
-        
-        currentQuestionID++;
-
-        
-        location.replace(`/card/${currentQuestionID}`);
-    }else{
-        document.getElementById(".next").disabled = true;
-    }
     
 
-})
+// backButton.addEventListener('click', function (event) {
+//     event.preventDefault();
 
-backButton.addEventListener('click', function(event){
-    event.preventDefault();
+//     // let currentQuestionID = document.querySelector('#question-card').getAttribute("value");
+//     // let previousQuestionID = document.querySelector('#question-card').getAttribute("deck");
 
-    let currentQuestionID = document.querySelector('#question-card').getAttribute("value");
-    let previousQuestionID = document.querySelector('#question-card').getAttribute("deck");
 
-    
-    if(`${currentQuestionID}` == `${previousQuestionID}`){
+//     // if(`${currentQuestionID}` == `${previousQuestionID}`){
 
-        currentQuestionID--;
-        
-        location.replace(`/card/${currentQuestionID}`);
-    }else{
-        document.getElementById(".back").disabled = true;
-    }
-    
-})
+//     //     currentQuestionID--;
+
+//     //     location.replace(`/deck/${previousQuestionID}/card/${currentQuestionID}`);
+//     // }else{
+//     //     document.getElementById(".back").disabled = true;
+//     // }
+
+// })

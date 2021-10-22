@@ -94,6 +94,13 @@ main {
   box-shadow: 7px 7px grey;
 }
 
+.my-deck {
+  width: 100%;
+  height: 100%;
+  height: 280px;
+  width: 400px;
+}
+
 .deck-title {
   color: black;
 }
@@ -142,7 +149,7 @@ main {
 #particles-js {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 800px;
   background-color: #667369;
   background-image: url("");
   background-repeat: no-repeat;

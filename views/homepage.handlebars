@@ -1,9 +1,16 @@
 
-<article>
-    <p>What Category would you like to study?</p>
+<article class="text-center">
+
+{{#if loggedIn}}
+    <p class="text-center my-2">Recent users decks:</p>
+    <div class="row justify-content-center">
 {{#each decks as |deck|}}
 {{> deck-details}}
 {{/each}}
-
+</div>
+{{else}}
+<p class="my-4">Log in to see and create your own study decks, as well as view other users' decks!</p>
+<a class="link btn btn-dark" href="/login" id="login">Login or Signup</a>
+{{/if}}
 </article>
 

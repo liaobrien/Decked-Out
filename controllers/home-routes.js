@@ -5,6 +5,9 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
 	try {
 		const deckQuery = await Deck.findAll({
+			// where:{
+			// 	user_id: req.session.user_id
+			// },
 			attributes: [
 				'id',
 				'name',
@@ -13,12 +16,17 @@ router.get('/', async (req, res) => {
 			include: [{
 				model: Card,
 				attributes: ['id', 'question', 'answer', 'deck_id']
+			}],
+			include: [{
+				model:User,
+				attributes:['username']
 			}]
 		})
 
 		const decks = deckQuery.map((displayDecks) =>
 			displayDecks.get({ plain: true })
 		)
+		console.log(decks)
 		res.render('homepage', { decks, loggedIn: req.session.loggedIn }) //renders the homepage for now
 	}
 
@@ -113,6 +121,43 @@ router.get('/deck/:deck_id/card/:card_id', async (req, res) => { //Shows the ans
             res.status(500).json(err);
         };
 });
+
+
+router.get('/my-decks', async (req, res) => {
+	try {
+		const deckQuery = await Deck.findAll({
+			where:{
+				user_id: req.session.user_id
+			},
+			attributes: [
+				'id',
+				'name',
+				'user_id'
+			],
+			include: [{
+				model: Card,
+				attributes: ['id', 'question', 'answer', 'deck_id']
+			}],
+			include: [{
+				model:User,
+				attributes:['username']
+			}]
+		})
+
+		const myDecks = deckQuery.map((displayDecks) =>
+			displayDecks.get({ plain: true })
+		)
+		console.log(myDecks)
+		res.render('my-decks', { myDecks, loggedIn: req.session.loggedIn }) //renders the homepage for now
+	}
+
+	catch (err) {
+		console.log(err);
+		res.status(500).json(err);
+	};
+});
+
+
 
 router.get('/new-deck', (req, res) => {
     res.render('new-deck', {loggedIn: true}); //keeps you logged in

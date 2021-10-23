@@ -102,6 +102,9 @@ main {
 
 .deck-title {
   color: black;
+  position: absolute;
+  top: 135px;
+  left: 150px;
 }
 
 .flip-card {

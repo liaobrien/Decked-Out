@@ -1,5 +1,5 @@
 * {
-  font-family: "Martel", serif;
+  font-family: "Nunito", "sans-serif";
 }
 
 body {
@@ -7,7 +7,6 @@ body {
 }
 
 h1 {
-  font-family: "Nunito", "sans-serif";
   font-size: 330%;
   font-weight: bold;
 }
@@ -156,7 +155,7 @@ main {
   background-size: cover;
   background-position: 50% 50%;
 }
-.hideMe{
+.hideMe {
   display: none;
   position: relative;
 }

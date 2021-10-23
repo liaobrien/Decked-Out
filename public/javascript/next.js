@@ -12,32 +12,8 @@ for (let i = 0; i < nextButton.length; i++) {
        let  nextId=parseInt(id) + 1;
         let flipcardNextEl= document.getElementById("card-"+nextId); 
         flipcardNextEl.classList.remove("hideMe");
-        // let  beforeId=parseInt(id);
-        // console.log("beforeId", beforeId);
-        // let flipcardBeforeEl=document.getElementById("card-" +beforeId);  
-        // flipcardBeforeEl.classList.add("hideMe");
+        
     })
     
 }
 });
-
-    
-    
-
-// backButton.addEventListener('click', function (event) {
-//     event.preventDefault();
-
-//     // let currentQuestionID = document.querySelector('#question-card').getAttribute("value");
-//     // let previousQuestionID = document.querySelector('#question-card').getAttribute("deck");
-
-
-//     // if(`${currentQuestionID}` == `${previousQuestionID}`){
-
-//     //     currentQuestionID--;
-
-//     //     location.replace(`/deck/${previousQuestionID}/card/${currentQuestionID}`);
-//     // }else{
-//     //     document.getElementById(".back").disabled = true;
-//     // }
-
-// })

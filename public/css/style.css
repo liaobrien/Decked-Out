@@ -22,8 +22,8 @@ h1 {
 
 main {
   position: relative;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
   font-size: 25px;
 }
 .app-title {

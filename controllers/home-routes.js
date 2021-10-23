@@ -25,10 +25,21 @@ router.get('/', async (req, res) => {
 
 		const decks = deckQuery.map((displayDecks) =>
 			displayDecks.get({ plain: true })
-		)
-		console.log(decks)
-		res.render('homepage', { decks, loggedIn: req.session.loggedIn }) //renders the homepage for now
-	}
+		);
+		req.session.save(() => {
+			// We set up a session variable to count the number of times we visit the homepage
+			if (req.session.countVisit) {
+			  // If the 'countVisit' session variable already exists, increment it by 1
+			  req.session.countVisit++;
+			} else {
+			  // If the 'countVisit' session variable doesn't exist, set it to 1
+			  req.session.countVisit = 1;
+			}
+		
+		
+		res.render('homepage', { decks, loggedIn: req.session.loggedIn, countVisit: req.session.countVisit}) //renders the homepage for now
+	});
+}
 
 	catch (err) {
 		console.log(err);
@@ -73,11 +84,13 @@ router.get('/deck/:id', async (req, res) => { //Shows the contents of each deck 
                 return;
             }
 
+			
+
             const deckCards = singleDeck.get({ plain: true });
             console.log(deckCards);
             res.render('deckofCards', { deckCards, loggedIn: true }); //This is similar to how the homepage works, except if we click on a post it instead renders the individual post!
 
-
+		
         }
         catch(err) {
             console.log(err);

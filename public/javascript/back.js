@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 for (let i = 0; i < backButton.length; i++) {
     backButton[i].addEventListener('click', function (event) {
         event.preventDefault();
+        
         let id=this.getAttribute('data-id');
         id=parseInt(id);
         let  beforeId = id - 1;

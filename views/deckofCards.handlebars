@@ -1,13 +1,11 @@
-<header >Deck Name:</header>
+<h2 class="text-light">Deck Name:</h2>
 {{#each this}}
-{{name}}
+<p class="text-light">{{name}}</p>
 {{/each}}
 
-<br>
-<br>
-<header class="showMe">Your Questions:</header>
+<h2 class="showMe text-light">Your Questions:</h2>
 <article>
-<button onclick="myFunction()" id="deckQuestions" type="button" class="start" value={{deckCards.user_id}} deck={{deckCards.cards.[0].id}} test={{deckCards.cards}}>Start your quiz</button>
+<button onclick="myFunction()" id="deckQuestions" type="button" class="start btn btn-success" value={{deckCards.user_id}} deck={{deckCards.cards.[0].id}} test={{deckCards.cards}}>Start your quiz</button>
 
 
 {{#each deckCards.cards}}
@@ -21,8 +19,7 @@
 {{> edit-deck-name}}
 
 </article>
-<a class="link" href="/edit-deck-name" id="login">Edit Deck Name</a>
-<button type="button" class="delete-deck-btn btn">Delete Deck</button>
+<button type="button" class="delete-deck-btn btn btn-danger">Delete Deck</button>
 
 
 <script src="/javascript/delete-deck.js"></script>
